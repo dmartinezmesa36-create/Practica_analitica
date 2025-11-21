@@ -3,7 +3,8 @@ from Persona import (
     agregar_persona,
     listar_personas,
     buscar_persona,
-    eliminar_persona
+    eliminar_persona,
+    modificar_persona
 )
 from typing import List
 
@@ -17,7 +18,8 @@ def menu():
         print("2. Listar personas")
         print("3. Buscar persona")
         print("4. Eliminar persona")
-        print("5. Salir")
+        print("5. Modificar persona")
+        print("6. Salir")
 
         opcion = input("Seleccione opción: ")
 
@@ -30,6 +32,8 @@ def menu():
         elif opcion == "4":
             eliminar_persona(personas)
         elif opcion == "5":
+            modificar_persona(personas)
+        elif opcion == "6":
             print("Saliendo del programa...")
             break
         else:
@@ -37,3 +41,4 @@ def menu():
 
 
 menu()
+
