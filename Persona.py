@@ -85,6 +85,60 @@ def eliminar_persona(personas: List[Persona]):
     print("No se encontró una persona con ese documento.")
 
 
+# --- NUEVA FUNCIÓN MODIFICAR PERSONA ---
+
+def modificar_persona(personas: List[Persona]):
+    if not personas:
+        print("No hay personas registradas")
+        return
+
+    doc = int(input("Ingrese el documento de la persona a modificar: "))
+
+    for p in personas:
+        if p.documento == doc:
+            print("\n--- Persona encontrada ---")
+            print("Seleccione qué desea modificar:")
+            print("1. Nombre")
+            print("2. Apellido")
+            print("3. Ciudad")
+            print("4. Edad")
+            print("5. Correo")
+            print("6. Cancelar")
+
+            opcion = input("Opción: ")
+
+            if opcion == "1":
+                p.nombre = input("Nuevo nombre: ")
+            elif opcion == "2":
+                p.apellido = input("Nuevo apellido: ")
+            elif opcion == "3":
+                p.ciudad = input("Nueva ciudad: ")
+            elif opcion == "4":
+                nueva_edad = int(input("Nueva edad: "))
+                if nueva_edad <= 0 or nueva_edad >= 120:
+                    print("Edad inválida")
+                    return
+                p.edad = nueva_edad
+            elif opcion == "5":
+                nuevo_correo = input("Nuevo correo: ")
+                if "@" not in nuevo_correo or "." not in nuevo_correo:
+                    print("Correo inválido")
+                    return
+                p.correo = nuevo_correo
+            elif opcion == "6":
+                print("Modificación cancelada.")
+                return
+            else:
+                print("Opción inválida")
+                return
+
+            print("Persona modificada correctamente.")
+            return
+
+    print("No se encontró una persona con ese documento.")
+
+
+
 
 
 
