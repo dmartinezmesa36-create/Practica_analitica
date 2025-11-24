@@ -11,6 +11,7 @@ from typing import List
 
 def menu():
     personas: List[Persona] = []
+    #se agrega el listado de los 
 
     while True:
         print("\n--- MENÚ ---")

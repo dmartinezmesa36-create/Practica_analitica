@@ -1,5 +1,5 @@
 from typing import List
-
+#se agregag la impotacion de de list para leer las carieables con una clase (tipo de dato: persona)
 class Persona:
     def __init__(self, nombre, apellido, ciudad, edad, correo, documento):
         self.nombre = nombre
@@ -8,7 +8,7 @@ class Persona:
         self.edad = edad
         self.correo = correo
         self.documento = documento
-
+#se establesen  las caracteristicas que ca tener la persona
 
 # --- Funciones del menú ---
 
@@ -41,8 +41,10 @@ def agregar_persona(personas: List[Persona]):
         return
 
     nueva = Persona(nombre, apellido, ciudad, edad, correo, documento)
+    #aqui se insertan los datos en la lista con el atributo de list para identificar los cambios
     personas.append(nueva)
     print("Persona agregada correctamente")
+
 
 
 def listar_personas(personas: List[Persona]):
@@ -51,7 +53,7 @@ def listar_personas(personas: List[Persona]):
     else:
         for p in personas:
             print(p.nombre, p.apellido, p.edad, p.ciudad, p.correo, p.documento)
-
+    # se lee las personas insertadas desde el listado
 
 def buscar_persona(personas: List[Persona]):
     if not personas:
@@ -62,7 +64,7 @@ def buscar_persona(personas: List[Persona]):
 
     for p in personas:
         if p.documento == doc:
-            print("\n--- Persona encontrada ---")
+            print("--- Persona encontrada ---")
             print(p.nombre, p.apellido, p.edad, p.ciudad, p.correo, p.documento)
             return
     
